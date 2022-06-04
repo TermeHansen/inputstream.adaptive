@@ -17,8 +17,8 @@
 */
 
 #include "aes_decrypter.h"
-#include "utils/log.h"
-#include "Ap4StreamCipher.h"
+#include "log.h"
+#include <bento4/Ap4StreamCipher.h>
 #include <kodi/Filesystem.h>
 #include <vector>
 
@@ -48,7 +48,7 @@ void AESDecrypter::decrypt(const AP4_UI08* aes_key,
                                       reinterpret_cast<AP4_Size*>(&dataSize), lastChunk)};
     if (!AP4_SUCCEEDED(result))
     {
-      LOG::LogF(LOGERROR, "AES decryption failed: %d", result);
+      Log(LOGLEVEL_ERROR, "AES decryption failed: %d", result);
     }
     dst.resize(dstOffset + dataSize);
 }
