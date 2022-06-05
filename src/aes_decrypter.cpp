@@ -18,7 +18,7 @@
 
 #include "aes_decrypter.h"
 #include "log.h"
-#include <bento4/Ap4StreamCipher.h>
+#include "Ap4StreamCipher.h"
 #include <kodi/Filesystem.h>
 #include <vector>
 
