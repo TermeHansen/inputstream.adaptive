@@ -42,7 +42,6 @@ void AESDecrypter::decrypt(const AP4_UI08* aes_key,
 
     AP4_CbcStreamCipher cbcStreamCipher{cbc_d_block_cipher};
     cbcStreamCipher.SetIV(aes_iv);
-    delete cbc_d_block_cipher;
     AP4_Result result{
         cbcStreamCipher.ProcessBuffer(src, dataSize, reinterpret_cast<AP4_UI08*>(&dst[0] + dstOffset),
                                       reinterpret_cast<AP4_Size*>(&dataSize), lastChunk)};
